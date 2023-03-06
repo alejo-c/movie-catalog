@@ -12,7 +12,7 @@ def index(req):
 
 def catalog(req):
     movies = Movie.objects.all()
-    return render(req, "movies/movies.html", {"movies": movies})
+    return render(req, "movies/catalog.html", {"movies": movies})
 
 
 @login_required
