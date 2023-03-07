@@ -15,6 +15,11 @@ def catalog(req):
     return render(req, "movies/catalog.html", {"movies": movies})
 
 
+def view(req, movie_id):
+    movie = Movie.objects.get(id=movie_id)
+    return render(req, "movies/movie.html", {"movie": movie})
+
+
 @login_required
 def add(req):
     form = MovieForm(req.POST or None, req.FILES or None)
